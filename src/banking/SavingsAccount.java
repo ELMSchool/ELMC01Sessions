@@ -1,5 +1,8 @@
 package banking;
 
+/**
+* This is a SavingsAccount class.
+*/
 public class SavingsAccount {
 
 	private double amount;

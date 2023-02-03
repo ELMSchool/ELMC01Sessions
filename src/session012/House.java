@@ -2,6 +2,9 @@ package session012;
 
 import java.util.Scanner;
 
+/**
+* This is a House class.
+*/
 public class House {
 	
 	private int numberOfHomesSold;
@@ -9,15 +12,12 @@ public class House {
 	private String streetName = "Test Street";
 	boolean isForSale;
 	
-	// default
-	// no-args
-	// hidden
+
 	public House() {
 		
 	}
 	
-	// specialized
-	// overloaded
+
 	public House(int streetNumber, String streetName, boolean isForSale) {
 		// default steps where properties are INITIALIZE
 		

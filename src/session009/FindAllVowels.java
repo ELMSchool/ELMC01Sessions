@@ -10,8 +10,6 @@ import java.util.Arrays;
  */
 public class FindAllVowels {
 
-	// arguments
-	// parameters
 	public static void main(String[] args) {
 
 		String sentence = "I'm buying an apple and a banana.";

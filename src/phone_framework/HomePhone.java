@@ -1,5 +1,7 @@
 package phone_framework;
 
+import phone_framework.utilities.Phone;
+
 public class HomePhone extends Phone implements Carryable {
 	public boolean isWired;
 	

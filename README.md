@@ -7,3 +7,6 @@ The frameworks located in this repository:
 
 Latest updates to REAME per `git commit --amend`
 
+I'm making changes to the COPY of my
+original README file in Git Repository.
+And this copy is stored in Working Tree.

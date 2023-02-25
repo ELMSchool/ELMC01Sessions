@@ -1,0 +1,70 @@
+XPath, and Why? if we have CSS already
+
+	XPath is similar, but requires more specific syntax
+	Its syntax is more complicated than CSS
+
+	The syntax requires the following:
+	- start with // (double slash): meaning, ANYWHERE in the HTML page
+	- MUST define tag name after //
+	- within square brackets
+	- MUST use @ (at) sign before the attribute that is being looked for
+
+	e.g.
+	//input[@placeholder='First Name']
+
+	vs CSS
+	input[placeholder='First Name']
+
+	In XPath, you MUST define tag name, OR you can use * (start), any tag
+	//*[@placeholder='First Name']
+	vs CSS
+	[placeholder='First Name']
+
+
+WHY then do we need XPath?
+	XPath has the ability to go 'up' in the HTML document.
+	Meaning, we can go to the parent/super element of the current element.
+	This will be especially useful when we have the following situation:
+
+	<parent_element>		--nothing to find this element with
+		<child_element>  	-- we want to find this, but can NOT any how
+
+		<another_child_element id='child'>	
+
+	</parent_element>
+
+	In the above examle, we have a 'parent_element' that has 2 children:
+		- the first child_element is the one we want to find
+			but there is no way to find that specific element
+		- the another_child_element has an ID that we can use
+	In this case what we're going to do is:
+		1. to find the another_child_element using its ID,
+		2. go UP to its parent (parent_element)
+		3. then again come back DOWN to the first child_element
+
+	XPath for this example would be:
+		//*[@id='child'] /.. /child_element
+
+
+Another reason why XPath is powerful:
+	It has methods that aren't available otherwise:
+	e.g. contains(text(),'text') - which can find ANY element
+		with matching text that is displayed
+
+
+Why is finding elements by visible text rather than name, id, classname?
+	(linkText(), partialLinkText(), XPath:contains(text))
+	
+	- available on each element
+	- visible on the web page
+	- if something changes, you will notice right on the page
+	- you achieve both needs of:
+		1. finding unique element, and
+		2. verifying visible text changes on the page
+	- PLUS,
+		- not all elements will have ID or Name
+		- not all elements will be easily identifiable by their attributes
+		- and MOST IMPORTANTLY, in a changing webpage, 
+			developers can change the HTML structure often
+			thus causing your element locators fail
+			(e.g., name changes, ID changes, classname changes, etc.)
